@@ -1,7 +1,6 @@
 # Inbox
 
-正在看、还没交的任务。最多同时 3 条。没有就空着。
+Open tasks. At most 3 rows with decision in {empty, considering, accepted, in-progress}.
 
-| 打开日期 | 平台 | 标题 | 链接 | 金额 | 截止 | 和驾驶舱同构？ | 决定 |
+| opened | platform | title | link | amount | due | isomorphic | decision |
 |---|---|---|---|---|---|---|---|
-|  |  |  |  |  |  |  |  |

@@ -8,7 +8,7 @@
 
 ## 状态
 
-空仓库 + 规格。没有自建赏金市场。
+**v0.1 可运行。** `python3 -m bountydesk list/add-inbox/validate`，开放 inbox 最多 3 条。
 
 ## 明确不做
 

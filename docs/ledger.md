@@ -1,7 +1,6 @@
 # Ledger
 
-已提交或已打款。金额以平台实际到账为准。
+Submitted or paid. Status must be submitted / paid / rejected.
 
-| 日期 | 平台 | 标题 | 链接 | 状态 | 金额 |
+| date | platform | title | link | status | amount |
 |---|---|---|---|---|---|
-|  |  |  |  | submitted / paid / rejected |  |

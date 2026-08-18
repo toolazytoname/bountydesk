@@ -8,7 +8,17 @@ This is not a product company. Boards already list “do X, get $Y”. You pick 
 
 ## Status
 
-Scaffold. A tracker and rules live in `docs/`. No marketplace software.
+**v0.1 runtime.** Record / list / validate inbox, ledger, and a five-heading proposal. Max 3 open inbox rows.
+
+```bash
+cd bountydesk
+PYTHONPATH=. python3 -m bountydesk list inbox
+PYTHONPATH=. python3 -m bountydesk add-inbox --opened 2026-08-18 --platform gitcoin \
+  --title demo --link https://example.com --amount 500 --due 2026-09-01 --isomorphic yes
+PYTHONPATH=. python3 -m bountydesk validate --proposal docs/proposal.example.md
+PYTHONPATH=. python3 -m bountydesk proposal --out /tmp/proposal.md
+PYTHONPATH=. python3 -m unittest discover -s tests -v
+```
 
 ## What belongs here
 

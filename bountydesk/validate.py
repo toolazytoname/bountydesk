@@ -75,12 +75,26 @@ def validate_ledger(rows: list[dict]) -> list[RowError]:
     return errs
 
 
+def _heading_tokens(text: str) -> set[str]:
+    """First word of each markdown heading line. '## dont' is only 'dont', not 'do'."""
+    found: set[str] = set()
+    for raw in text.splitlines():
+        line = raw.strip()
+        if not line.startswith("#"):
+            continue
+        title = line.lstrip("#").strip().lower()
+        if not title:
+            continue
+        found.add(title.split()[0])
+    return found
+
+
 def validate_proposal(text: str) -> list[RowError]:
-    lower = text.lower()
+    present = _heading_tokens(text)
     errs = []
     for h in PROPOSAL_HEADINGS:
-        if f"## {h}" not in lower and f"# {h}" not in lower:
+        if h not in present:
             errs.append(RowError("proposal", f"missing heading {h}"))
-    if any(s in _norm(text) and "private_key" in lower for s in ("private_key",)):
+    if "private_key" in text.lower():
         errs.append(RowError("proposal", "looks like it contains a private_key"))
     return errs

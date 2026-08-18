@@ -63,6 +63,20 @@ class TestValidate(unittest.TestCase):
         self.assertEqual(validate_proposal(text), [])
         self.assertTrue(validate_proposal("# hi\n"))
 
+    def test_missing_do_not_satisfied_by_dont(self):
+        # '## do' is a prefix of '## dont'; whole-line tokens must not confuse them.
+        text = (
+            "## problem\nbody\n"
+            "## dont\nno keys\n"
+            "## demo\nlink\n"
+            "## milestones\none\n"
+        )
+        errs = validate_proposal(text)
+        messages = [e.message for e in errs]
+        self.assertTrue(any("missing heading do" == m for m in messages), messages)
+        self.assertFalse(any("missing heading dont" in m for m in messages), messages)
+        self.assertTrue(any(e.where == "proposal" for e in errs))
+
     def test_parse_empty_template(self):
         rows = parse_md_table((ROOT / "docs/inbox.md").read_text())
         self.assertEqual(rows, [])
@@ -159,6 +173,29 @@ class TestCLI(unittest.TestCase):
             )
             self.assertNotEqual(bad.returncode, 0)
             self.assertIn("max 3", bad.stderr)
+
+    def test_validate_proposal_cli_missing_do(self):
+        with tempfile.TemporaryDirectory() as td:
+            td = Path(td)
+            inbox = td / "inbox.md"
+            ledger = td / "ledger.md"
+            inbox.write_text("# Inbox\n\n| opened | platform | title | link | amount | due | isomorphic | decision |\n|---|---|---|---|---|---|---|---|\n")
+            ledger.write_text("# Ledger\n\n| date | platform | title | link | status | amount |\n|---|---|---|---|---|---|\n")
+            r = run(
+                [
+                    "--inbox",
+                    str(inbox),
+                    "--ledger",
+                    str(ledger),
+                    "validate",
+                    "--proposal",
+                    str(ROOT / "fixtures/proposal-no-do.md"),
+                ],
+                cwd=td,
+            )
+            self.assertNotEqual(r.returncode, 0)
+            self.assertIn("missing heading do", r.stderr)
+            self.assertNotIn("missing heading dont", r.stderr)
 
 
 if __name__ == "__main__":

@@ -8,16 +8,15 @@ This is not a product company. Boards already list “do X, get $Y”. You pick 
 
 ## Status
 
-**v0.1 runtime.** Record / list / validate inbox, ledger, and a five-heading proposal. Max 3 open inbox rows.
+**v0.1 runtime (Rust 1.85).** Record / list / validate inbox, ledger, and a five-heading proposal. Max 3 open inbox rows. Headings are whole-line tokens (`## dont` is not `## do`).
 
 ```bash
 cd bountydesk
-PYTHONPATH=. python3 -m bountydesk list inbox
-PYTHONPATH=. python3 -m bountydesk add-inbox --opened 2026-08-18 --platform gitcoin \
+cargo test
+cargo run -- list inbox
+cargo run -- add-inbox --opened 2026-08-18 --platform gitcoin \
   --title demo --link https://example.com --amount 500 --due 2026-09-01 --isomorphic yes
-PYTHONPATH=. python3 -m bountydesk validate --proposal docs/proposal.example.md
-PYTHONPATH=. python3 -m bountydesk proposal --out /tmp/proposal.md
-PYTHONPATH=. python3 -m unittest discover -s tests -v
+cargo run -- validate --proposal docs/proposal.example.md
 ```
 
 ## What belongs here

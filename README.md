@@ -1,6 +1,6 @@
 # bountydesk
 
-**English** · [中文](README.zh-CN.md) — plan: [docs/PROJECT-PLAN.md](docs/PROJECT-PLAN.md)
+**English** · [中文](README.zh-CN.md) — plan: [docs/PROJECT-PLAN.md](docs/PROJECT-PLAN.md) · 学习: [learn/](learn/)
 
 A **personal desk** for ecosystem bounties, RFPs, and small paid tasks.
 

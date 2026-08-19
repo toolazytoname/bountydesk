@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="380" viewBox="0 0 960 380" role="img">
+  <rect width="960" height="380" fill="#0f1419"/>
+  <text x="32" y="36" fill="#8aa0b4" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13">bountydesk · architecture</text>
+  <g font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" text-anchor="middle">
+    <rect x="40" y="80" width="160" height="56" rx="10" fill="#1a2430" stroke="#5b6b7a"/>
+    <text x="120" y="114" fill="#e8eef4">inbox.md</text>
+    <rect x="40" y="160" width="160" height="56" rx="10" fill="#1a2430" stroke="#5b6b7a"/>
+    <text x="120" y="194" fill="#e8eef4">ledger.md</text>
+    <rect x="40" y="240" width="160" height="56" rx="10" fill="#1a2430" stroke="#5b6b7a"/>
+    <text x="120" y="274" fill="#e8eef4">proposal.md</text>
+    <rect x="280" y="150" width="200" height="70" rx="10" fill="#1a2430" stroke="#e8a54b"/>
+    <text x="380" y="180" fill="#e8eef4">validate.rs</text>
+    <text x="380" y="198" fill="#8aa0b4" font-size="11">tables + headings</text>
+    <rect x="560" y="80" width="160" height="56" rx="10" fill="#1a2430" stroke="#3ee0c4"/>
+    <text x="640" y="114" fill="#e8eef4">max 3 open</text>
+    <rect x="560" y="160" width="160" height="56" rx="10" fill="#1a2430" stroke="#3ee0c4"/>
+    <text x="640" y="194" fill="#e8eef4">status enum</text>
+    <rect x="560" y="240" width="160" height="56" rx="10" fill="#1a2430" stroke="#e8a54b"/>
+    <text x="640" y="266" fill="#e8eef4">whole-line</text>
+    <text x="640" y="284" fill="#8aa0b4" font-size="11">do ≠ dont</text>
+    <rect x="780" y="150" width="140" height="70" rx="10" fill="#1a2430" stroke="#3ee0c4"/>
+    <text x="850" y="180" fill="#e8eef4">CLI</text>
+    <text x="850" y="198" fill="#8aa0b4" font-size="11">add / list</text>
+    <path d="M200 108 H240 V185 H280" stroke="#5b6b7a" fill="none"/>
+    <path d="M200 188 H280" stroke="#5b6b7a" fill="none"/>
+    <path d="M200 268 H240 V185" stroke="#5b6b7a" fill="none"/>
+    <path d="M480 185 H560" stroke="#e8a54b" fill="none"/>
+    <path d="M720 185 H780" stroke="#3ee0c4" fill="none"/>
+    <text x="32" y="340" fill="#8aa0b4" font-size="12" text-anchor="start">Markdown is the database. Git diffs stay readable. Matching "## do" as a substring of "## dont" is treated as a bug.</text>
+  </g>
+</svg>

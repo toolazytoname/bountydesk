@@ -1,5 +1,23 @@
 # 学习模块 · bountydesk
 
+![封面](assets/cover.jpg)
+
+[封面动画 6s](assets/cover.mp4)
+
+## 架构
+
+![架构](assets/architecture.svg)
+
+```mermaid
+flowchart TD
+  I[inbox.md] --> V[validate.rs]
+  L[ledger.md] --> V
+  P[proposal.md] --> V
+  V -->|开放 > 3| X[拒绝]
+  V -->|## do 被 ## dont 吃掉?| H[整行 token 比较]
+  V -->|通过| C[add / list]
+```
+
 这个仓库几乎不碰链，却是最「Web3 行业」的一块：钱从基金会和赏金盘子来，不从用户订阅来。
 
 ```bash
